@@ -1,5 +1,8 @@
 namespace CHSAuction.Web.DataContexts.IdentityMigrations
 {
+    using CHSAuction.Web.Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -15,18 +18,13 @@ namespace CHSAuction.Web.DataContexts.IdentityMigrations
 
         protected override void Seed(CHSAuction.Web.DataContexts.IdentityDb context)
         {
-            //  This method will be called after migrating to the latest version.
+            if(!context.Users.Any(u => u.UserName == "mike.soulia@gmail.com")) {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser { UserName = "mike.soulia@gmail.com" };
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+                manager.Create(user, "$ammy101");
+            }
         }
     }
 }

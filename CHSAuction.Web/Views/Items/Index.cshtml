@@ -38,10 +38,13 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Image)
+            @{
+                string imagePath = string.Format("~/Content/images/{0}", item.Image);
+            }
+            <img src="@Url.Content(imagePath)" alt="Image" style="width: 100px; ;" />
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Value)
+            @Html.DisplayFor(modelItem => item.Value, "{0:c }")
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.MinimumBid)

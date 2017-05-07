@@ -1,10 +1,11 @@
-﻿@{
+﻿@model IEnumerable<ItemListViewModel>
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
     <h1>CHS Auction</h1>
-    <p class="lead">Welcome to the Colchester High School Auction site!</p>
+    <p class="lead"><strong>UPDATE:</strong> Items will be listed shortly. Bidding will be enabled shortly thereafter.</p>
 </div>
 
 <div class="row">
@@ -16,7 +17,81 @@
             You will not be asked for any credit card information as we will not be collecting money through this site.
         </p>
         <p>
-            Winners not present at CHS will be notified by e-mail over the weekend and arrangements for payment and pick-up can be made. Thank you for your support!
+            Winners will be notified by e-mail and arrangements for payment and pick-up can be made. Thank you for your support!
         </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12" hidden>
+        <table>
+            <tr>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.Image)*@
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Value)
+                </th>
+                <th style="padding-right : 10px">
+                    @Html.DisplayNameFor(model => model.MinimumBid)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.NewBid)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.HighestBid)
+                </th>
+                <th></th>
+            </tr>
+
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @{
+                            string imagePath = string.Format("~/Content/images/{0}", item.Image);
+                        }
+                        <img src="@Url.Content(imagePath)" alt="Image" style="width: 100px; ;" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Name)
+                    </td>
+                    <td style="width : 300px">
+                        @Html.DisplayFor(model => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Value, "{0:c}")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.MinimumBid)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelModel => item.NewBid)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelModel => item.HighestBid)
+                    </td>
+                    <td>
+                        @*@Html.ActionLink("Bid Me", "BidMe",  new { id = item.Id, bid = item.NewBid }) |*@
+                        @*@Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null) |*@
+                        @*@Html.ActionLink("Details", "Details", "Item", new { id = item.Id }, null)*@
+                        @if (User.IsInRole("admin"))
+                {
+                            <text> | @Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null)</text>
+                            <text> | @Html.ActionLink("All Bids", "Index", "Bids", new { id = item.Id }, null)</text>
+                            <text> | @Html.ActionLink("Edit", "Edit", "Item", new { id = item.Id }, null)</text>
+                            <text> | @Html.ActionLink("Delete", "Delete", "Item", new { id = item.Id }, null)</text>
+                        }
+                    </td>
+                </tr>
+
+                            }
+        </table>
     </div>
 </div>

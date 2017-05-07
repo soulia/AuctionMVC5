@@ -10,7 +10,7 @@ namespace CHSAuction.Web.DataContexts
     public class IdentityDb : IdentityDbContext<ApplicationUser>
     {
         public IdentityDb()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("AzureConnection", throwIfV1Schema: false)
         {
         }
 

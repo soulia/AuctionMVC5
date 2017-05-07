@@ -9,10 +9,11 @@ namespace CHSAuction.Web.DataContexts
 {
     public class CHSAuctionDb: DbContext
     {
-        public CHSAuctionDb() : base("DefaultConnection")
+        public CHSAuctionDb() : base("AzureConnection")
         {
 
         }
         public DbSet<Item> Items { get; set; }
+        public DbSet<ItemBid> ItemBids { get; set; }
     }
 }
