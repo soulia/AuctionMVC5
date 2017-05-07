@@ -190,9 +190,20 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DataContexts\CHSAuctionDb.cs" />
+    <Compile Include="DataContexts\CHSAuctionMigrations\201705071733522_InitialCreate.cs" />
+    <Compile Include="DataContexts\CHSAuctionMigrations\201705071733522_InitialCreate.Designer.cs">
+      <DependentUpon>201705071733522_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\CHSAuctionMigrations\Configuration.cs" />
     <Compile Include="DataContexts\IdentityDb.cs" />
+    <Compile Include="DataContexts\IdentityMigrations\201705071732237_InitialCreate.cs" />
+    <Compile Include="DataContexts\IdentityMigrations\201705071732237_InitialCreate.Designer.cs">
+      <DependentUpon>201705071732237_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\IdentityMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -260,6 +271,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Items\Create.cshtml" />
+    <Content Include="Views\Items\Delete.cshtml" />
+    <Content Include="Views\Items\Details.cshtml" />
+    <Content Include="Views\Items\Edit.cshtml" />
+    <Content Include="Views\Items\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -284,6 +300,14 @@
       <Project>{89aa1012-1c3c-4069-8492-bcef240d5c77}</Project>
       <Name>CHSAuction.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataContexts\CHSAuctionMigrations\201705071733522_InitialCreate.resx">
+      <DependentUpon>201705071733522_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\IdentityMigrations\201705071732237_InitialCreate.resx">
+      <DependentUpon>201705071732237_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
