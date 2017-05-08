@@ -4,16 +4,17 @@
 }
 
 <div class="jumbotron">
-    <h1>CHS Auction</h1>
-    <p class="lead"><strong>UPDATE:</strong> Items will be listed shortly. Bidding will be enabled shortly thereafter.</p>
+    <h1>Colchester High School Auction!</h1>
+    <p class="lead"><strong>UPDATE:</strong> Bidding will be enabled shortly!</p>
 </div>
 
 <div class="row">
     <div class="col-md-12">
         <h2>Welcome to the Colchester High School Auction site!</h2>
         <h3>This auction is to benefit the Colchester High School Project Graduation.</h3>
-        <p>
-            How to bid:<br />It’s fast and easy! Just register to set up a bidding account by entering your email address and creating a password.
+        <p><strong> How to bid <em>(Coming Soon!)</em></strong></p>
+        <p hidden>
+            It’s fast and easy! Just register to set up a bidding account by entering your email address and creating a password.
             You will not be asked for any credit card information as we will not be collecting money through this site.
         </p>
         <p>
@@ -21,8 +22,10 @@
         </p>
     </div>
 </div>
+
 <div class="row">
-    <div class="col-md-12" hidden>
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
         <table>
             <tr>
                 <th>
@@ -48,7 +51,6 @@
                 </th>
                 <th></th>
             </tr>
-
 
             @foreach (var item in Model)
             {
@@ -82,7 +84,7 @@
                         @*@Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null) |*@
                         @*@Html.ActionLink("Details", "Details", "Item", new { id = item.Id }, null)*@
                         @if (User.IsInRole("admin"))
-                {
+                        {
                             <text> | @Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null)</text>
                             <text> | @Html.ActionLink("All Bids", "Index", "Bids", new { id = item.Id }, null)</text>
                             <text> | @Html.ActionLink("Edit", "Edit", "Item", new { id = item.Id }, null)</text>
@@ -90,8 +92,7 @@
                         }
                     </td>
                 </tr>
-
-                            }
+             }
         </table>
     </div>
 </div>

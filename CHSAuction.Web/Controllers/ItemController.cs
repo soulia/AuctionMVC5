@@ -12,7 +12,7 @@ using CHSAuction.Web.DataContexts;
 namespace CHSAuction.Web.Controllers
 {
     [Authorize]
-    public class ItemsController : Controller
+    public class ItemController : Controller
     {
         private CHSAuctionDb db = new CHSAuctionDb();
 

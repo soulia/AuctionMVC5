@@ -189,8 +189,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BidsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DataContexts\CHSAuctionDb.cs" />
     <Compile Include="DataContexts\CHSAuctionMigrations\201705071733522_InitialCreate.cs" />
@@ -217,7 +218,38 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\Alex and Ani.png" />
+    <Content Include="Content\images\Chilis.jpg" />
+    <Content Include="Content\images\default_image_400.jpg" />
+    <Content Include="Content\images\download.png" />
+    <Content Include="Content\images\Flynnarts.png" />
+    <Content Include="Content\images\guilty plate diner.jpg" />
+    <Content Include="Content\images\Healthy Living.png" />
+    <Content Include="Content\images\IMG_0486.JPG" />
+    <Content Include="Content\images\IMG_1113.GIF" />
+    <Content Include="Content\images\IMG_1126.JPG" />
+    <Content Include="Content\images\IMG_1131.GIF" />
+    <Content Include="Content\images\IMG_1144.JPG" />
     <Content Include="Content\images\IMG_1145.JPG" />
+    <Content Include="Content\images\IMG_1150.JPG" />
+    <Content Include="Content\images\IMG_1151.JPG" />
+    <Content Include="Content\images\IMG_1152.JPG" />
+    <Content Include="Content\images\IMG_1159.PNG" />
+    <Content Include="Content\images\IMG_1169.JPG" />
+    <Content Include="Content\images\IMG_1177.JPG" />
+    <Content Include="Content\images\IMG_3144.JPG" />
+    <Content Include="Content\images\IMG_3145.JPG" />
+    <Content Include="Content\images\IMG_3146.JPG" />
+    <Content Include="Content\images\Internation Hair Salon.png" />
+    <Content Include="Content\images\Keurig thing.png" />
+    <Content Include="Content\images\Keurig.png" />
+    <Content Include="Content\images\logo.jpg" />
+    <Content Include="Content\images\OilnGo.jpeg" />
+    <Content Include="Content\images\Papa Franks.jpg" />
+    <Content Include="Content\images\Philips easy clean.jpg" />
+    <Content Include="Content\images\Spare Time.png" />
+    <Content Include="Content\images\Trader Joes.png" />
+    <Content Include="Content\images\Windjammer.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -273,14 +305,15 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Items\Create.cshtml" />
-    <Content Include="Views\Items\Delete.cshtml" />
-    <Content Include="Views\Items\Details.cshtml" />
-    <Content Include="Views\Items\Edit.cshtml" />
-    <Content Include="Views\Items\Index.cshtml" />
+    <Content Include="Views\Item\Create.cshtml" />
+    <Content Include="Views\Item\Delete.cshtml" />
+    <Content Include="Views\Item\Details.cshtml" />
+    <Content Include="Views\Item\Edit.cshtml" />
+    <Content Include="Views\Item\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Bids\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
