@@ -9,7 +9,7 @@ namespace CHSAuction.Web.DataContexts.CHSAuctionMigrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             MigrationsDirectory = @"DataContexts\CHSAuctionMigrations";
         }
 

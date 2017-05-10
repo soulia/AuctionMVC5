@@ -6,10 +6,13 @@ using System.Web;
 
 namespace CHSAuction.Web.Models
 {
-    public class ItemListViewModel
+    public class BidListViewModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int? UserId { get; set; }
+        [Display(Name = "Name")]
+        public string UserName { get; set; }
+        public int ItemId { get; set; }
+        public string ItemName { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
         [DisplayFormat(DataFormatString = "{0:c}")]
@@ -17,12 +20,8 @@ namespace CHSAuction.Web.Models
         [Display(Name = "Minimum")]
         [DisplayFormat(DataFormatString = "{0:c}")]
         public int MinimumBid { get; set; }
-        [Display(Name = "My Bid")]
+        [Display(Name = "Bid")]
         [DisplayFormat(DataFormatString = "{0:c}")]
-        public int NewBid { get; set; }
-        [Display(Name = "Highest")]
-        [DisplayFormat(DataFormatString = "{0:c}")]
-        public int HighestBid { get; set; }
-        public string UserId { get; set; }
+        public int? Bid { get; set; }
     }
 }

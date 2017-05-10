@@ -1,4 +1,5 @@
 ﻿using CHSAuction.Web.DataContexts;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,13 @@ namespace CHSAuction.Web.Controllers
     public class BidsController : Controller
     {
         CHSAuctionDb _db = new CHSAuctionDb();
+
+        public ActionResult BidHistory(int itemId)
+        {
+            string userId = User.Identity.GetUserId();
+
+            return Content("None");
+        }
 
         // GET: Bids
         public ActionResult Index()

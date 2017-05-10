@@ -49,7 +49,7 @@ namespace CHSAuction.Web.Controllers
                 MinimumBid = i.Items.MinimumBid,
                 NewBid = (int?)i.ItemBids.Bid ?? 0,
                 HighestBid = (int?)i.Items.Bids.Max(b => b.Bid) ?? 0,
-                UserId = (int?)i.ItemBids.UserId
+                UserId = i.ItemBids.UserId
             }).OrderBy(i => i.Name).ThenByDescending(i => i.NewBid);
 
             return View(model.GroupBy(i => i.Id).Select(x => x.FirstOrDefault()).OrderBy(i => i.Name).ThenBy(i => i.Description));
