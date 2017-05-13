@@ -1,4 +1,5 @@
-﻿using CHSAuction.Web.DataContexts;
+﻿using CHSAuction.Entities;
+using CHSAuction.Web.DataContexts;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,23 @@ namespace CHSAuction.Web.Controllers
     {
         CHSAuctionDb _db = new CHSAuctionDb();
 
+        [Authorize]
         public ActionResult BidHistory(int itemId)
         {
             string userId = User.Identity.GetUserId();
 
-            return Content("None");
+            var myBids = from b in _db.ItemBids
+                         //join u in _db.UserProfiles
+                         //on b.UserId equals u.UserId
+                         where b.ItemId == itemId
+                         where b.UserId == userId
+                         orderby b.Bid descending
+                         select b.Bid;
+
+            if (myBids.Any())
+                return Content("$" + string.Join(", $", myBids));
+            else
+                return Content("None");
         }
 
         // GET: Bids
@@ -37,20 +50,67 @@ namespace CHSAuction.Web.Controllers
             return View();
         }
 
+        [HttpGet]
+        [Authorize]
+        public ActionResult Create(int itemId)
+        {
+            var allBids = from b in _db.ItemBids
+                          join i in _db.Items
+                          on b.ItemId equals i.Id
+                          where i.Id == itemId
+                          orderby b.Bid descending
+                          select b;
+
+            var minumItemBid = from i in _db.Items
+                               where i.Id == itemId
+                               select i;
+
+            int highestBid = allBids.Any() ? Math.Max(allBids.First().Bid, minumItemBid.First().MinimumBid) : minumItemBid.First().MinimumBid;
+
+            //object userId = Membership.GetUser().ProviderUserKey;
+            string userId = User.Identity.GetUserId();
+            var myBid = new ItemBid();
+            myBid.Bid = highestBid + 1;
+            myBid.ItemId = itemId;
+            myBid.UserId = userId;
+
+            return View(myBid);
+        }
+
         // POST: Bids/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [Authorize]
+        // Obscure naming convention bug with EF - don't name parameters the same as model properties...
+        // http://www.martin-brennan.com/net-mvc-4-model-binding-null-on-post/
+        public ActionResult Create(ItemBid bidd)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            var allBids = from b in _db.ItemBids
+                          join i in _db.Items
+                          on b.ItemId equals i.Id
+                          where i.Id == bidd.ItemId
+                          orderby b.Bid descending
+                          select b;
 
-                return RedirectToAction("Index");
-            }
-            catch
+            var minumItemBid = from i in _db.Items
+                               where i.Id == bidd.ItemId
+                               select i;
+
+            int minumBid = allBids.Any() ? Math.Max(allBids.First().Bid, minumItemBid.First().MinimumBid) : minumItemBid.First().MinimumBid;
+
+            // for this to work, make sure to set     @Html.ValidationSummary(false) in the Create.cshtml View
+            if (bidd.Bid <= minumBid)
+                ModelState.AddModelError("Bid", "Bid must be greater than $" + minumBid.ToString());
+            else
+                bidd.UserId = User.Identity.GetUserId();
+
+            if (ModelState.IsValid)
             {
-                return View();
+                _db.ItemBids.Add(bidd);
+                _db.SaveChanges();
+                //return RedirectToAction("Index", "Bids", new { id = bidd.ItemId });
+                return RedirectToAction("Index", "Home");
             }
+            return View(bidd);
         }
 
         // GET: Bids/Edit/5

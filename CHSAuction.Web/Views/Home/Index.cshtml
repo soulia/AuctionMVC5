@@ -14,7 +14,7 @@
         <h2>This auction is to benefit Colchester High School Project Graduation.</h2>
         <p>Thank you to all our sponsors.</p>
         <p><strong> How to bid <em>(Coming Soon!)</em></strong></p>
-        <p hidden>
+        <p >
             It’s fast and easy! Just register to set up a bidding account by entering your email address and creating a password.
             You will not be asked for any credit card information as we will not be collecting money through this site.
         </p>
@@ -83,8 +83,8 @@
                     </td>
                     <td>
                         @*@Html.ActionLink("Bid Me", "BidMe",  new { id = item.Id, bid = item.NewBid }) |*@
-                        @*@Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null) |*@
-                        @*@Html.ActionLink("Details", "Details", "Item", new { id = item.Id }, null)*@
+                        @Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null) |
+                        @Html.ActionLink("Details", "Details", "Item", new { id = item.Id }, null)
                         @if (User.IsInRole("admin"))
                         {
                             <text> | @Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null)</text>
