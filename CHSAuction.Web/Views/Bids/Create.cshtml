@@ -4,32 +4,40 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Your Bid for this item is:</h2>
+<h2 hidden>Your Bid for this item is:</h2>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+<h2>@ViewBag.Title</h2>
+<div class="row">
+    <div class="col-md-8">
+        <section id="bidForm">
 
-    <fieldset>
-        <legend>New Bid</legend>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
 
-        <div class="editor-label" style="width : 350px">
-            <div>
-                <b>Your previous bids were: </b>@Html.Action("BidHistory", "Bids", new { id = @Model.ItemId })
-            </div>
-            <br /><b>
-                Please bid higher than:
-            </b>
-            @Html.EditorFor(model => model.Bid, "{0:c}")
-            @Html.ValidationMessageFor(model => model.Bid)
-        </div>
+                <fieldset>
+                    <legend>New Bid</legend>
+                        <div class="col-md-10">
+                            <div>
+                                <strong>Your previous bids were: </strong>@Html.Action("BidHistory", "Bids", new { id = @Model.ItemId })
+                            </div>
+                            <div>The minimum bid for this item is:
+                            </div>
+                            <div>
+                                @Html.EditorFor(model => model.Bid, "{0:c}", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Bid)
+                            </div>
+                        </div>
 
-        <p>
-            <input type="submit" value="Submit My Bid" />
-        </p>
-    </fieldset>
-}
+                    <p>
+                        <input type="submit" value="Submit My Bid" class="btn btn-default"/>
+                    </p>
+                </fieldset>
+            }
+        </section>
+    </div>
+</div>
 
 <div>
     @Html.ActionLink("Back to List", "Index", "Home")

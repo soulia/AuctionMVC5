@@ -319,6 +319,7 @@
     <Content Include="Views\Item\Index.cshtml" />
     <Content Include="Views\Bids\Index.cshtml" />
     <Content Include="Views\Bids\Create.cshtml" />
+    <Content Include="Views\Home\MyBids.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -85,7 +85,7 @@
                         @*@Html.ActionLink("Bid Me", "BidMe",  new { id = item.Id, bid = item.NewBid }) |*@
                         @Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null) |
                         @Html.ActionLink("Details", "Details", "Item", new { id = item.Id }, null)
-                        @if (User.IsInRole("admin"))
+                        @if (User.Equals("mike.soulia@gmail.com"))
                         {
                             <text> | @Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null)</text>
                             <text> | @Html.ActionLink("All Bids", "Index", "Bids", new { id = item.Id }, null)</text>

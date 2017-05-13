@@ -1,5 +1,6 @@
 ﻿using CHSAuction.Web.DataContexts;
 using CHSAuction.Web.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,6 +54,36 @@ namespace CHSAuction.Web.Controllers
             }).OrderBy(i => i.Name).ThenByDescending(i => i.NewBid);
 
             return View(model.GroupBy(i => i.Id).Select(x => x.FirstOrDefault()).OrderBy(i => i.Name).ThenBy(i => i.Description));
+        }
+
+        [Authorize]
+        public ActionResult MyBids()
+        {
+            string userId = User.Identity.GetUserId();
+
+            var itemBids = _db.Items.GroupJoin(_db.ItemBids,
+                                                    i => i.Id,
+                                                    ib => ib.ItemId,
+                                                    (x, y) => new { Items = x, ItemBids = y })
+                                                    .SelectMany(
+                                                        x => x.ItemBids.DefaultIfEmpty(),
+                                                        (x, y) => new { Items = x.Items, ItemBids = y });
+
+            var model = itemBids.Select(i => new ItemListViewModel
+            {
+                Id = i.Items.Id,
+                Name = i.Items.Name,
+                Description = i.Items.Description,
+                Image = i.Items.Image,
+                Value = i.Items.Value,
+                MinimumBid = i.Items.MinimumBid,
+                NewBid = (int?)i.ItemBids.Bid ?? 0,
+                HighestBid = (int?)i.Items.Bids.Max(b => b.Bid) ?? 0,
+                UserId = i.ItemBids.UserId
+            }).OrderBy(i => i.Name).ThenByDescending(i => i.NewBid);
+
+            // http://stackoverflow.com/questions/14747680/distinct-by-one-column-and-max-from-another-column-linq
+            return View(model.Where(u => u.UserId == userId).GroupBy(i => i.Id).Select(g => g.OrderByDescending(x => x.NewBid).FirstOrDefault()));
         }
 
         public ActionResult About()
