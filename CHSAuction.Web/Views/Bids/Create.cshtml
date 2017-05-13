@@ -1,7 +1,7 @@
 ﻿@model CHSAuction.Entities.ItemBid
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Make a Bid";
 }
 
 <h2 hidden>Your Bid for this item is:</h2>
@@ -16,29 +16,36 @@
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true)
 
-                <fieldset>
-                    <legend>New Bid</legend>
-                        <div class="col-md-10">
-                            <div>
-                                <strong>Your previous bids were: </strong>@Html.Action("BidHistory", "Bids", new { id = @Model.ItemId })
-                            </div>
-                            <div>The minimum bid for this item is:
-                            </div>
-                            <div>
-                                @Html.EditorFor(model => model.Bid, "{0:c}", new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Bid)
-                            </div>
-                        </div>
 
-                    <p>
-                        <input type="submit" value="Submit My Bid" class="btn btn-default"/>
-                    </p>
-                </fieldset>
+                <div class="col-md-10">
+                    <h4>
+                        Your previous bids were:  @Html.Action("BidHistory", "Bids", new { id = @Model.ItemId })
+                    </h4>
+                    <hr />
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <label>The minimum bid for this item is:  $</label>
+                            @Html.EditorFor(model => model.Bid, "{0:c}", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Bid)
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-md-10">
+                            <input type="submit" value="Submit My Bid" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+
             }
         </section>
     </div>
 </div>
 
-<div>
-    @Html.ActionLink("Back to List", "Index", "Home")
+<div class="row">
+    <div class="col-md-10">
+        <br/>
+        @Html.ActionLink("Back to List", "Index", "Home")
+    </div>
 </div>
