@@ -1,5 +1,6 @@
 ﻿using CHSAuction.Entities;
 using CHSAuction.Web.DataContexts;
+using CHSAuction.Web.Models;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace CHSAuction.Web.Controllers
     public class BidsController : Controller
     {
         CHSAuctionDb _db = new CHSAuctionDb();
+        IdentityDb _idb = new IdentityDb();
 
         [Authorize]
         public ActionResult BidHistory(int itemId)
@@ -32,12 +34,78 @@ namespace CHSAuction.Web.Controllers
                 return Content("None");
         }
 
-        // GET: Bids
-        public ActionResult Index()
+        [Authorize]
+        public ActionResult Index([Bind(Prefix = "id")] int itemId)
         {
-            return View();
-        }
+   
+            var allItemsBidHistory = _db.Items.GroupJoin(_db.ItemBids,
+                        i => i.Id,
+                        ib => ib.ItemId,
+                        (x, y) => new { Items = x, ItemBids = y })
+                        .SelectMany(
+                            x => x.ItemBids.DefaultIfEmpty(),
+                            (x, y) => new { Items = x.Items, ItemBids = y })
+                            .Where(i => i.Items.Id == itemId);
 
+            var model = allItemsBidHistory.Select(i => new
+            {
+                Id = i.Items.Id,
+                Name = i.Items.Name,
+                Description = i.Items.Description,
+                Image = i.Items.Image,
+                Value = i.Items.Value,
+                MinimumBid = i.Items.MinimumBid,
+                NewBid = (int?)i.ItemBids.Bid ?? 0,  // ItemListViewModel
+                //MyBid = (int?)i.ItemBids.Bid ?? 0,
+                HighestBid = (int?)i.Items.Bids.Max(b => b.Bid) ?? 0,  // ItemListViewModel
+                //HighestBid = (int?)i.Items.ItemBids.Max(b => b.Bid) ?? 0,
+                UserId = i.ItemBids.UserId
+                //}).OrderByDescending(i => i.MyBid);
+                //}).GroupBy(i => i.Name); //.OrderByDescending(i => i.MyBid);
+            }).OrderBy(i => i.Id).ThenByDescending(i => i.NewBid);
+
+            //if (bidsByUser.Count() > 0)
+            if(model.Count() > 0)
+            {
+
+                //var result = bidsByUser.OrderBy(i => i.ItemName).ThenBy(i => i.Description).ThenByDescending(i => i.Bid);
+                //var result = bidsByUser.Select(b => new BidListViewModel
+                var result = model.Select(r => new BidListViewModel
+                {
+                    UserId = r.UserId,
+                    UserName = r.Name,
+                    ItemId = r.Id,
+                    ItemName = r.Name,
+                    Description = r.Description,
+                    Image = r.Image,
+                    Value = r.Value,
+                    MinimumBid = r.MinimumBid,
+                    Bid = r.NewBid
+                });
+
+                if (result != null)
+                    return View(result);
+            }
+            else
+            {
+                var result = model.Select(r => new BidListViewModel
+                {
+                    UserId = null,
+                    UserName = null,
+                    ItemId = r.Id,
+                    ItemName = r.Name,
+                    Description = r.Description,
+                    Image = r.Image,
+                    Value = r.Value,
+                    MinimumBid = r.MinimumBid,
+                    Bid = null
+                });
+
+                if (result != null)
+                    return View(result);
+            }
+            return HttpNotFound();
+        }
         // GET: Bids/Details/5
         public ActionResult Details(int id)
         {
