@@ -84,3 +84,12 @@ tr.pager td {
     padding: 0 0.25em 0 0;
 }
 
+.jumbotron {
+    color: #193441;
+    background-color: #D9ECFF;
+}
+
+.navbar-inverse {
+    background-color: #003366;
+    border-color: #080808;
+}
