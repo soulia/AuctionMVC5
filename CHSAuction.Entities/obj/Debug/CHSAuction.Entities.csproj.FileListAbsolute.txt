@@ -1,0 +1,10 @@
+c:\users\mike\documents\visual studio 2017\Projects\CHSAuction\CHSAuction.Entities\bin\Debug\CHSAuction.Entities.dll
+c:\users\mike\documents\visual studio 2017\Projects\CHSAuction\CHSAuction.Entities\bin\Debug\CHSAuction.Entities.pdb
+c:\users\mike\documents\visual studio 2017\Projects\CHSAuction\CHSAuction.Entities\obj\Debug\CHSAuction.Entities.csprojResolveAssemblyReference.cache
+c:\users\mike\documents\visual studio 2017\Projects\CHSAuction\CHSAuction.Entities\obj\Debug\CHSAuction.Entities.dll
+c:\users\mike\documents\visual studio 2017\Projects\CHSAuction\CHSAuction.Entities\obj\Debug\CHSAuction.Entities.pdb
+C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Entities\bin\Debug\CHSAuction.Entities.dll
+C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Entities\bin\Debug\CHSAuction.Entities.pdb
+C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Entities\obj\Debug\CHSAuction.Entities.dll
+C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Entities\obj\Debug\CHSAuction.Entities.pdb
+C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Entities\obj\Debug\CHSAuction.Entities.csprojResolveAssemblyReference.cache

@@ -1,0 +1,105 @@
+﻿@model IEnumerable<ItemListViewModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron hidden-sm hidden-xs">
+    <h1>Welcome to CHS 2017 Project Graduation Auction!</h1>
+    <p class="lead"><strong>Bidding has now ended!</strong>  Winners will be notified by end of day Thursday.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4 col-sm-12">
+        <h2 hidden>Welcome to the CHS Project Graduation Auction Site!</h2>
+        <h2>This auction is to benefit Colchester High School Project Graduation.</h2>
+        <p>Thank you to all our sponsors.</p>
+        </div>
+    <div class="col-md-8">
+        <h2>How to bid</></h2>
+        <p >
+            It’s fast and easy! Just register to set up a bidding account by entering your email address and creating a password.
+            You will not be asked for any credit card information as we will not be collecting money through this site.
+        </p>
+        <p>
+            Bidding will end on <strong>May 31st, 6:00pm</strong>.  Winners will be notified by e-mail and arrangements for payment and pick-up can be made. Thank you for your support!
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h2>We have @Model.Count() items for auction.</h2>
+    </div>
+</div>
+
+<div class="table-responsive">
+   
+        <table class="table table-striped table-hover ">
+            <tr>
+                <th class="col-md-1">
+                    @*@Html.DisplayNameFor(model => model.Image)*@
+                </th>
+                <th class="col-md-2">
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th class="col-md-2 hidden-sm hidden-xs">
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th class="col-md-1">
+                    @Html.DisplayNameFor(model => model.Value)
+                </th>
+                @*<th style="padding-right : 10px">*@
+                <th class="col-md-1">
+                    @Html.DisplayNameFor(model => model.MinimumBid)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.NewBid)
+                    </th>*@
+                <th class="col-md-1">
+                    @Html.DisplayNameFor(model => model.HighestBid)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="col-md-1">
+                        @{
+                            string imagePath = string.Format("~/Content/images/{0}", item.Image);
+                        }
+                        <img src="@Url.Content(imagePath)" alt="Image" style="width: 100px; ;" />
+                    </td>
+                    <td class="col-md-2">
+                        @Html.DisplayFor(model => item.Name)
+                    </td>
+                    <td class="col-md-2 hidden-sm hidden-xs">
+                        @Html.DisplayFor(model => item.Description)
+                    </td>
+                    <td class="col-md-1">
+                        @Html.DisplayFor(model => item.Value, "{0:c}")
+                    </td>
+                    <td class="col-md-1">
+                        @Html.DisplayFor(model => item.MinimumBid)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelModel => item.NewBid)
+                        </td>*@
+                    <td class="col-md-1">
+                        @Html.DisplayFor(modelModel => item.HighestBid)
+                    </td>
+                    <td class="col-md-2">
+                        @*@Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null) |*@ 
+                        @Html.ActionLink("Details", "Details", "Item", new { id = item.Id }, null)
+                        @if (User.Identity.Name.Equals("mike.soulia@gmail.com"))
+                        {
+                            <text> | @Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null)</text>
+                            <text> | @Html.ActionLink("All Bids", "Index", "Bids", new { id = item.Id }, null)</text>
+                            <text> | @Html.ActionLink("Edit", "Edit", "Item", new { id = item.Id }, null)</text>
+                            @*<text> | @Html.ActionLink("Delete", "Delete", "Item", new { id = item.Id }, null)</text>*@
+                        }
+                    </td>
+                </tr>
+             }
+        </table>
+
+</div>

@@ -1,0 +1,8 @@
+c:\users\mike\documents\visual studio 2017\Projects\CHSAuction\CHSAuction.Entities\bin\Release\CHSAuction.Entities.dll
+c:\users\mike\documents\visual studio 2017\Projects\CHSAuction\CHSAuction.Entities\bin\Release\CHSAuction.Entities.pdb
+c:\users\mike\documents\visual studio 2017\Projects\CHSAuction\CHSAuction.Entities\obj\Release\CHSAuction.Entities.dll
+c:\users\mike\documents\visual studio 2017\Projects\CHSAuction\CHSAuction.Entities\obj\Release\CHSAuction.Entities.pdb
+C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Entities\bin\Release\CHSAuction.Entities.dll
+C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Entities\bin\Release\CHSAuction.Entities.pdb
+C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Entities\obj\Release\CHSAuction.Entities.dll
+C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Entities\obj\Release\CHSAuction.Entities.pdb

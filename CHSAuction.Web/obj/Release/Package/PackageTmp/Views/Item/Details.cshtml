@@ -1,0 +1,38 @@
+﻿@model CHSAuction.Entities.Item
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Html.DisplayFor(model => model.Name)</h2>
+<br />
+
+<fieldset>
+
+    <div style="float : left; padding-right : 10px; padding-bottom : 20px;">
+        @{
+            string imagePath = string.Format("~/Content/images/{0}", @Html.Raw(Html.DisplayFor(model => model.Image)));
+        }
+        <img src="@Url.Content(imagePath)" alt="Image" style="width: 400px;" />
+    </div>
+
+    <div class="display-label" style="font-weight : bold">
+        @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label" style="font-weight : bold">
+        @Html.DisplayNameFor(model => model.Value) : @Html.DisplayFor(model => model.Value)
+    </div>
+
+    <div class="display-label" style="font-weight : bold">
+        Minimum Bid : @Html.DisplayFor(model => model.MinimumBid)
+    </div>
+</fieldset>
+    <p>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+        @Html.ActionLink("Back to List", "Index", "Home") |
+        @Html.ActionLink("Back to My Bids", "MyBids", "Home")
+    </p>
