@@ -256,6 +256,14 @@
     <Content Include="Content\images\Papa Franks.jpg" />
     <Content Include="Content\images\Philips easy clean.jpg" />
     <Content Include="Content\images\Rehab.png" />
+    <Content Include="Content\images\Spanish\Hotel.png" />
+    <Content Include="Content\images\Spanish\irish.png" />
+    <Content Include="Content\images\Spanish\kars.png" />
+    <Content Include="Content\images\Spanish\lighthouse.png" />
+    <Content Include="Content\images\Spanish\nate.png" />
+    <Content Include="Content\images\Spanish\pets.png" />
+    <Content Include="Content\images\Spanish\skis.png" />
+    <Content Include="Content\images\Spanish\sliders.png" />
     <Content Include="Content\images\Spare Time.png" />
     <Content Include="Content\images\Trader Joes.png" />
     <Content Include="Content\images\Windjammer.png" />
