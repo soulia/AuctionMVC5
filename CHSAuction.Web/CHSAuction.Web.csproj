@@ -25,6 +25,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/22763c49-0225-4b22-8fbe-0061e14004a7/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/CHSAuction.Web</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/22763c49-0225-4b22-8fbe-0061e14004a7/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/CHSAuction.Web</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,12 +47,42 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.4.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.4.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.4.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.4.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.4.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.4.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.TraceListener, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.TraceListener.2.4.1\lib\net45\Microsoft.ApplicationInsights.TraceListener.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.0\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -160,27 +192,6 @@
     <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
       <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.Agent.Intercept">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.Web">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -205,6 +216,7 @@
       <DependentUpon>201705071732237_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="DataContexts\IdentityMigrations\Configuration.cs" />
+    <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -256,14 +268,44 @@
     <Content Include="Content\images\Papa Franks.jpg" />
     <Content Include="Content\images\Philips easy clean.jpg" />
     <Content Include="Content\images\Rehab.png" />
+    <Content Include="Content\images\Spanish\bar.png" />
+    <Content Include="Content\images\Spanish\bikes.png" />
+    <Content Include="Content\images\Spanish\brownies.png" />
+    <Content Include="Content\images\Spanish\dan.png" />
+    <Content Include="Content\images\Spanish\default_image_400.jpg" />
+    <Content Include="Content\images\Spanish\drink.png" />
+    <Content Include="Content\images\Spanish\farms.png" />
+    <Content Include="Content\images\Spanish\fellow kids.jpg" />
+    <Content Include="Content\images\Spanish\girl.png" />
+    <Content Include="Content\images\Spanish\greene.png" />
     <Content Include="Content\images\Spanish\Hotel.png" />
+    <Content Include="Content\images\Spanish\house.png" />
     <Content Include="Content\images\Spanish\irish.png" />
+    <Content Include="Content\images\Spanish\jiff.png" />
     <Content Include="Content\images\Spanish\kars.png" />
     <Content Include="Content\images\Spanish\lighthouse.png" />
     <Content Include="Content\images\Spanish\nate.png" />
+    <Content Include="Content\images\Spanish\necklace one.png" />
+    <Content Include="Content\images\Spanish\necklace three.png" />
+    <Content Include="Content\images\Spanish\necklace two.png" />
+    <Content Include="Content\images\Spanish\no good\37694470_9WXxj8fZgqSoq0B2bR867aBlCnEuvzKAabNWud98qx8.jpg" />
+    <Content Include="Content\images\Spanish\no good\6867E01L.jpg" />
+    <Content Include="Content\images\Spanish\no good\a_passion_for_pets.jpg" />
+    <Content Include="Content\images\Spanish\no good\bf5a69d1-fdd3-4b3a-b402-e79cd7df4c1d.png" />
+    <Content Include="Content\images\Spanish\no good\get-20-towards-food-and-beverage-at-rozzis-lakeshore-tavern-amp-9-7456592-regular.jpg" />
+    <Content Include="Content\images\Spanish\no good\IMG_1144.JPG" />
+    <Content Include="Content\images\Spanish\no good\lighthouse.jpg" />
+    <Content Include="Content\images\Spanish\no good\mckees_pub.jpg" />
+    <Content Include="Content\images\Spanish\no good\MRG Logo 2016.jpg" />
+    <Content Include="Content\images\Spanish\no good\seaway_carwash.gif" />
     <Content Include="Content\images\Spanish\pets.png" />
+    <Content Include="Content\images\Spanish\pizza.png" />
+    <Content Include="Content\images\Spanish\shaws.png" />
     <Content Include="Content\images\Spanish\skis.png" />
     <Content Include="Content\images\Spanish\sliders.png" />
+    <Content Include="Content\images\Spanish\smart kids.png" />
+    <Content Include="Content\images\Spanish\tax.png" />
+    <Content Include="Content\images\Spanish\windjam.png" />
     <Content Include="Content\images\Spare Time.png" />
     <Content Include="Content\images\Trader Joes.png" />
     <Content Include="Content\images\Windjammer.png" />
@@ -276,6 +318,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Connected Services\Application Insights\ConnectedService.json" />
+    <Content Include="Content\images\Spanish\no good\KT 1, 2, 3 - Google Docs.pdf" />
     <None Include="Properties\PublishProfiles\CHSAuction - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -364,6 +408,9 @@
     <EmbeddedResource Include="DataContexts\IdentityMigrations\201705071732237_InitialCreate.resx">
       <DependentUpon>201705071732237_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
