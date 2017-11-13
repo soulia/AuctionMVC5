@@ -7,4 +7,3 @@ C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Entit
 C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Entities\bin\Debug\CHSAuction.Entities.pdb
 C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Entities\obj\Debug\CHSAuction.Entities.dll
 C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Entities\obj\Debug\CHSAuction.Entities.pdb
-C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Entities\obj\Debug\CHSAuction.Entities.csprojResolveAssemblyReference.cache

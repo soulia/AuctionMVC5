@@ -71,7 +71,9 @@
                         @{
                             string imagePath = string.Format("~/Content/images/{0}", item.Image);
                         }
-                        <img src="@Url.Content(imagePath)" alt="Image" style="width: 100px; ;" />
+                        <a href="@Url.Action("Details", "Item", new { id= item.Id})">
+                            <img src="@Url.Content(imagePath)" alt="Image" style="width: 100px; ;" />
+                        </a>
                     </td>
                     <td class="col-md-2">
                         @Html.DisplayFor(model => item.Name)

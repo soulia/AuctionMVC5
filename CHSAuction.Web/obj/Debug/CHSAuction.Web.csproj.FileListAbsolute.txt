@@ -197,3 +197,9 @@ C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Web\o
 C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Web\obj\Debug\CHSAuction.Web.csproj.GenerateResource.Cache
 C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Web\obj\Debug\CHSAuction.Web.dll
 C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Web\obj\Debug\CHSAuction.Web.pdb
+C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Web\bin\Microsoft.ApplicationInsights.TraceListener.dll
+C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Web\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Web\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Web\bin\Microsoft.ApplicationInsights.TraceListener.xml
+C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Web\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Mike\Documents\Visual Studio 2017\Projects\AuctionMVC5\CHSAuction.Web\bin\System.Diagnostics.DiagnosticSource.xml
