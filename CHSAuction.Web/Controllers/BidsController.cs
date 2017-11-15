@@ -119,7 +119,7 @@ namespace CHSAuction.Web.Controllers
         }
 
         [HttpGet]
-        [Authorize(Users ="mike.soulia@gmail.com")]
+        [Authorize]
         public ActionResult Create(int itemId)
         {
             var allBids = from b in _db.ItemBids
@@ -147,7 +147,7 @@ namespace CHSAuction.Web.Controllers
 
         // POST: Bids/Create
         [HttpPost]
-        [Authorize(Users = "mike.soulia@gmail.com")]
+        [Authorize]
         // Obscure naming convention bug with EF - don't name parameters the same as model properties...
         // http://www.martin-brennan.com/net-mvc-4-model-binding-null-on-post/
         public ActionResult Create(ItemBid bidd)

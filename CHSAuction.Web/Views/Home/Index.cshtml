@@ -5,8 +5,9 @@
 
 <div class="jumbotron hidden-sm hidden-xs">
     <h2>Welcome to the Online Silent Auction for Colchester High School’s Conservation in Costa Rica Trip! Just in time for the holidays!</h2>
-    <p class="lead"><strong>This auction will run from November 15 - December 3.</strong><br/> Items will be available for pick up on December 7, 8, 9, and 10 </p>
-    <h3><strong>Bidding starts on November 15th!</strong></h3>
+    <p class="lead"><strong>This auction will run from November 15 - December 3.</strong><br/> Items will be available for pick up on December 7, 8, 9, and 10 <br/>
+    Cash or Checks payable to <strong>Colchester High School</strong></p>
+    <h3><strong>Bidding has now begun!</strong></h3>
 </div>
 
 <div class="row">
@@ -25,7 +26,7 @@
             We hope you find some treasures on which to bid.  There are a variety of items available, including gift cards for many local businesses including restaurants, shops, car washes and more; ski passes; handmade and local products; get-aways and more  (more to come).
         </p>
         <p>
-            Bidding will end on <strong>December 6th, 6:00pm.</strong>.  Winners will be notified by e-mail and arrangements for payment and pick-up can be made. Thank you for your support!
+            Bidding will end on <strong>December 3rd, 6:00pm.</strong>.  Winners will be notified by e-mail and arrangements for payment and pick-up can be made. Thank you for your support!
         </p>
     </div>
 </div>
@@ -94,14 +95,14 @@
                         @Html.DisplayFor(modelModel => item.HighestBid)
                     </td>
                     <td class="col-md-2">
-                        @*@Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null) |*@ 
+                        @Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null) |
                         @Html.ActionLink("Details", "Details", "Item", new { id = item.Id }, null)
                         @if (User.Identity.Name.Equals("mike.soulia@gmail.com"))
                         {
-                            <text> | @Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null)</text>
+                            @*<text> | @Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null)</text>*@
                             <text> | @Html.ActionLink("All Bids", "Index", "Bids", new { id = item.Id }, null)</text>
                             <text> | @Html.ActionLink("Edit", "Edit", "Item", new { id = item.Id }, null)</text>
-                            @*<text> | @Html.ActionLink("Delete", "Delete", "Item", new { id = item.Id }, null)</text>*@
+                            <text> | @Html.ActionLink("Delete", "Delete", "Item", new { id = item.Id }, null)</text>
                         }
                     </td>
                 </tr>
