@@ -271,6 +271,7 @@
     <Content Include="Content\images\Spanish\bar.png" />
     <Content Include="Content\images\Spanish\basket.jpg" />
     <Content Include="Content\images\Spanish\bikes.png" />
+    <Content Include="Content\images\Spanish\Bolin.png" />
     <Content Include="Content\images\Spanish\bowl.jpg" />
     <Content Include="Content\images\Spanish\bracelet.png" />
     <Content Include="Content\images\Spanish\brown bear.jpg" />
@@ -281,10 +282,12 @@
     <Content Include="Content\images\Spanish\default_image_400.jpg" />
     <Content Include="Content\images\Spanish\drink.png" />
     <Content Include="Content\images\Spanish\ears.jpg" />
+    <Content Include="Content\images\Spanish\edgy.jpg" />
     <Content Include="Content\images\Spanish\essex.jpg" />
     <Content Include="Content\images\Spanish\farms.png" />
     <Content Include="Content\images\Spanish\fellow kids.jpg" />
     <Content Include="Content\images\Spanish\fish.jpg" />
+    <Content Include="Content\images\Spanish\fruit.jpg" />
     <Content Include="Content\images\Spanish\girl.png" />
     <Content Include="Content\images\Spanish\glass.jpg" />
     <Content Include="Content\images\Spanish\greene.png" />
@@ -298,22 +301,30 @@
     <Content Include="Content\images\Spanish\necklace one.png" />
     <Content Include="Content\images\Spanish\necklace three.png" />
     <Content Include="Content\images\Spanish\necklace two.png" />
+    <Content Include="Content\images\Spanish\never taken a photo.jpg" />
     <Content Include="Content\images\Spanish\no good\37694470_9WXxj8fZgqSoq0B2bR867aBlCnEuvzKAabNWud98qx8.jpg" />
     <Content Include="Content\images\Spanish\no good\6867E01L.jpg" />
     <Content Include="Content\images\Spanish\no good\a_passion_for_pets.jpg" />
     <Content Include="Content\images\Spanish\no good\bf5a69d1-fdd3-4b3a-b402-e79cd7df4c1d.png" />
+    <Content Include="Content\images\Spanish\no good\Bolin.png" />
+    <Content Include="Content\images\Spanish\no good\edgy.jpg" />
+    <Content Include="Content\images\Spanish\no good\fruit.jpg" />
     <Content Include="Content\images\Spanish\no good\get-20-towards-food-and-beverage-at-rozzis-lakeshore-tavern-amp-9-7456592-regular.jpg" />
     <Content Include="Content\images\Spanish\no good\IMG_1144.JPG" />
     <Content Include="Content\images\Spanish\no good\lighthouse.jpg" />
     <Content Include="Content\images\Spanish\no good\mckees_pub.jpg" />
     <Content Include="Content\images\Spanish\no good\MRG Logo 2016.jpg" />
+    <Content Include="Content\images\Spanish\no good\never taken a photo.jpg" />
+    <Content Include="Content\images\Spanish\no good\red scarf.jpg" />
     <Content Include="Content\images\Spanish\no good\seaway_carwash.gif" />
+    <Content Include="Content\images\Spanish\no good\white bag.jpg" />
     <Content Include="Content\images\Spanish\nother necklace 2.jpg" />
     <Content Include="Content\images\Spanish\nother necklace.jpg" />
     <Content Include="Content\images\Spanish\pets.png" />
     <Content Include="Content\images\Spanish\piano concert.jpg" />
     <Content Include="Content\images\Spanish\pizza.png" />
     <Content Include="Content\images\Spanish\real clover.jpg" />
+    <Content Include="Content\images\Spanish\red scarf.jpg" />
     <Content Include="Content\images\Spanish\rings.jpg" />
     <Content Include="Content\images\Spanish\scarf 2.jpg" />
     <Content Include="Content\images\Spanish\scarf.jpg" />
@@ -324,6 +335,7 @@
     <Content Include="Content\images\Spanish\smart kids.png" />
     <Content Include="Content\images\Spanish\snow bear.png" />
     <Content Include="Content\images\Spanish\tax.png" />
+    <Content Include="Content\images\Spanish\white bag.jpg" />
     <Content Include="Content\images\Spanish\windjam.png" />
     <Content Include="Content\images\Spare Time.png" />
     <Content Include="Content\images\Trader Joes.png" />
@@ -339,7 +351,6 @@
     </Content>
     <Content Include="Connected Services\Application Insights\ConnectedService.json" />
     <Content Include="Content\images\Spanish\no good\KT 1, 2, 3 - Google Docs.pdf" />
-    <Content Include="Content\images\Spanish\pics %281%29.zip" />
     <None Include="Properties\PublishProfiles\CHSAuction - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

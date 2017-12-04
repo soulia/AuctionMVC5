@@ -7,7 +7,7 @@
     <h2>Welcome to the Online Silent Auction for Colchester High School’s Conservation in Costa Rica Trip! Just in time for the holidays!</h2>
     <p class="lead"><strong>This auction will run from November 15 - December 3.</strong><br/> Items will be available for pick up on December 7, 8, 9, and 10 <br/>
     Cash or Checks payable to <strong>Colchester High School</strong></p>
-    <h3><strong>Bidding has now begun!</strong></h3>
+    <h3><strong>Bidding is over! The Winners will be contacted shortly. Thank you!</strong></h3>
 </div>
 
 <div class="row">
@@ -95,7 +95,7 @@
                         @Html.DisplayFor(modelModel => item.HighestBid)
                     </td>
                     <td class="col-md-2">
-                        @Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null) |
+                        @*Html.ActionLink("Bid", "Create", "Bids", new { itemId = item.Id }, null) |*@
                         @Html.ActionLink("Details", "Details", "Item", new { id = item.Id }, null)
                         @if (User.Identity.Name.Equals("mike.soulia@gmail.com"))
                         {
