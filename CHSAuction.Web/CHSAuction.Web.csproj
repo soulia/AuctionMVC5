@@ -27,6 +27,7 @@
     </NuGetPackageImportStamp>
     <ApplicationInsightsResourceId>/subscriptions/22763c49-0225-4b22-8fbe-0061e14004a7/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/CHSAuction.Web</ApplicationInsightsResourceId>
     <ApplicationInsightsAnnotationResourceId>/subscriptions/22763c49-0225-4b22-8fbe-0061e14004a7/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/CHSAuction.Web</ApplicationInsightsAnnotationResourceId>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -302,22 +303,6 @@
     <Content Include="Content\images\Spanish\necklace three.png" />
     <Content Include="Content\images\Spanish\necklace two.png" />
     <Content Include="Content\images\Spanish\never taken a photo.jpg" />
-    <Content Include="Content\images\Spanish\no good\37694470_9WXxj8fZgqSoq0B2bR867aBlCnEuvzKAabNWud98qx8.jpg" />
-    <Content Include="Content\images\Spanish\no good\6867E01L.jpg" />
-    <Content Include="Content\images\Spanish\no good\a_passion_for_pets.jpg" />
-    <Content Include="Content\images\Spanish\no good\bf5a69d1-fdd3-4b3a-b402-e79cd7df4c1d.png" />
-    <Content Include="Content\images\Spanish\no good\Bolin.png" />
-    <Content Include="Content\images\Spanish\no good\edgy.jpg" />
-    <Content Include="Content\images\Spanish\no good\fruit.jpg" />
-    <Content Include="Content\images\Spanish\no good\get-20-towards-food-and-beverage-at-rozzis-lakeshore-tavern-amp-9-7456592-regular.jpg" />
-    <Content Include="Content\images\Spanish\no good\IMG_1144.JPG" />
-    <Content Include="Content\images\Spanish\no good\lighthouse.jpg" />
-    <Content Include="Content\images\Spanish\no good\mckees_pub.jpg" />
-    <Content Include="Content\images\Spanish\no good\MRG Logo 2016.jpg" />
-    <Content Include="Content\images\Spanish\no good\never taken a photo.jpg" />
-    <Content Include="Content\images\Spanish\no good\red scarf.jpg" />
-    <Content Include="Content\images\Spanish\no good\seaway_carwash.gif" />
-    <Content Include="Content\images\Spanish\no good\white bag.jpg" />
     <Content Include="Content\images\Spanish\nother necklace 2.jpg" />
     <Content Include="Content\images\Spanish\nother necklace.jpg" />
     <Content Include="Content\images\Spanish\pets.png" />
@@ -350,7 +335,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Connected Services\Application Insights\ConnectedService.json" />
-    <Content Include="Content\images\Spanish\no good\KT 1, 2, 3 - Google Docs.pdf" />
     <None Include="Properties\PublishProfiles\CHSAuction - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
